@@ -1,0 +1,13 @@
+<Configure id='wac' class="org.eclipse.jetty.webapp.WebAppContext">
+	<New id="DSviniths" class="org.eclipse.jetty.plus.jndi.Resource">
+		<Arg />
+		<Arg>jdbc/DSviniths</Arg>
+		<Arg>
+			<New class="com.mysql.jdbc.jdbc2.optional.MysqlDataSource">
+				<Set name="Url">jdbc:mysql://RPC13:3306/viniths</Set>
+				<Set name="User">root</Set>
+				<Set name="Password">MYsql123$</Set>
+			</New>
+		</Arg>
+	</New>
+</Configure>

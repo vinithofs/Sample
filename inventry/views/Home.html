@@ -1,0 +1,25 @@
+<nav>
+    <div>
+        <p>Welcome!</p>
+        <ul class="title">
+            <a ui-sref = "home.profile">Profile</a><br><br>
+            <a ui-sref = "home.userget">Users</a><br><br>
+            <a ui-sref = "home.product">product</a><br><br>
+
+            <div class = "logoutbutton">
+                <button ui-sref="login">Log Out</button>
+            </div>
+        </ul>
+    </div>
+
+    <div class = "searchbuttons">
+        <select ng-model="showSelectValue" ng-init="showSelectValue='All'">
+            <option value="All" selected>All</option>
+            <option value="WFA">WFA</option>
+            <option value="Approved">Approved</option>
+            <option value="Disapproved">DisApproved</option>
+        </select>
+    </div>
+
+    <div ui-view class="contents"></div>
+</nav>

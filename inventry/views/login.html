@@ -1,0 +1,42 @@
+<body class = "images">
+    <div ng-controller = "login-controller" ngCookies>
+        <div class="login">
+
+            <p>{{error}}</p>
+
+            <div>
+                <h2>{{greeting}}</h2>
+            </div>
+
+            <form name = "nameForm">
+
+                <input type = "username"
+                       placeholder ="username"
+                       name = "username"
+                       class = "userpassword"
+                       ng-model = "username" autofocus required/>
+
+                <p ng-show = "nameForm.username.$error.required &&
+                    nameForm.username.$dirty">Please enter your name
+                </p><br><br>
+            </form>
+
+            <form name = "passwordForm">
+                <input type = "password"
+                       placeholder="Password"
+                       name = "password"
+                       class = "userpassword"
+                       ng-model = "password" required/><br><br>
+            </form>
+
+            <form name = "loginvalidation">
+                <button  class = "buttons"
+                         ng-click = "login()">login</button>
+            </form>
+
+            <button class = "buttons" ui-sref="user"> Sign Up!</button><br><br>
+
+            <a href="#" class="forgot">forgot password?</a><br>
+        </div>
+    </div>
+</body>

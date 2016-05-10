@@ -1,0 +1,91 @@
+.images {
+    background-image: url("background.jpg");
+}
+
+.login {
+    border:1px solid gray;
+    background-color: white;
+    border-radius: 6px;
+    width: 300px;
+    margin: 10px;
+    text-align: center;
+    margin-left: 500px;
+    margin-right: 200px;
+    margin-bottom: 200px;
+}
+
+.profilestyle {
+    border: 1px solid gray;
+    background-color: cyan;
+    width: 300px;
+    text-align: center;
+    margin-left: 50px;
+}
+
+.signupstyle {
+    border: 1px solid gray;
+    background-color: cyan;
+    width: 300px;
+    text-align: center;
+    margin-left: 500px;
+}
+
+.userdetails {
+    width: 330px;
+    position: absolute;
+}
+
+.cancel{
+    float :right;
+    cursor: pointer;
+    background-color: red;
+    color:white;
+}
+.userpassword{
+    height:20px;
+    width:230;
+    border-radius: 6px;
+}
+
+.formcontroll {
+    height: 20px;
+    width: 200;
+    border-radius: 8px;
+}
+
+.address {
+    height: 40px;
+    width: 150;
+    border-radius: 8px;
+}
+
+.buttons1:hover {
+    height:20px;
+    width:230;
+    cursor: pointer;
+    background-color: red;
+    color:white;
+    padding-left: 50px;
+}
+.buttons:hover {
+    cursor: pointer;
+}
+
+.logoutbutton {
+    cursor: pointer;
+    margin-top: 350px;
+    margin-left: 80px;
+}
+
+.title {
+    float: left;
+    background-color: gray;
+    width: 150px;
+    height:500px;
+}
+.contents {
+    margin-left: 500px;
+}
+.searchbuttons {
+    margin-top: 20px;
+}

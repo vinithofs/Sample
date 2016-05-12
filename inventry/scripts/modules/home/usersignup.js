@@ -1,5 +1,5 @@
 angular.module('inventry.home', [])
-    .controller('login', function($scope, $http, $state, $window) {
+    .controller('login', function($scope, $http, $state) {
 
         $scope.pagename = "User Signup ";
         $scope.signinpage = function signinpage() {
@@ -12,11 +12,9 @@ angular.module('inventry.home', [])
             address: $scope.address,
             phonenumber:$scope.phno})
         .then(function (response) {
-            $window.location.reload();
             $scope.positivemessage =
             "User successfully added, but you should wait for Admin approval";
         }, function(error) {
-            $window.location.reload();
             $scope.errormessage = "Enter your valid details";
 
         });

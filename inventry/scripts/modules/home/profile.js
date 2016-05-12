@@ -2,6 +2,7 @@ angular.module('home.profile', [])
     .controller('userdetails', function($scope, $http, $state) {
 
         $scope.profilename = "User Profile Details";
+        $scope.userdetails = {};
 
         function getCookie(cname) {
         console.log("hello");
@@ -17,20 +18,21 @@ angular.module('home.profile', [])
                     }
                 }
                 return "";
-    }
+            }
+
         $scope.userprofilepage = function userprofilepage() {
         console.log("userprofile");
             var id = getCookie("id");
             var url = "http://localhost:8080/inventry/login?id="+id;
             $http.get(url)
                 .then(function (response) {
-                    $scope.name = response.data.name;
-                    $scope.username = response.data.userName;
-                    $scope.mailid = response.data.mailId;
-                    $scope.password = response.data.password;
-                    $scope.date = response.data.dateOfBirth;
-                    $scope.address = response.data.address;
-                    $scope.phonenumber = response.data.phonenumber;
+                    $scope.userdetails.name = response.data.name;
+                    $scope.userdetails.username = response.data.userName;
+                    $scope.userdetails.mailid = response.data.mailId;
+                    $scope.userdetails.password = response.data.password;
+                    $scope.userdetails.date = response.data.dateOfBirth;
+                    $scope.userdetails.address = response.data.address;
+                    $scope.userdetails.phonenumber = response.data.phonenumber;
                 }, function(error) {
                     $scope.errormessage = "Enter your valid details";
             });
@@ -41,8 +43,8 @@ angular.module('home.profile', [])
             var getId = getCookie("id");
             var url = "http://localhost:8080/inventry/login";
             $http.put(url , {id: getId,
-                    password : $scope.password,
-                    phonenumber : $scope.phonenumber})
+                    password : $scope.userdetails.password,
+                    phonenumber : $scope.userdetails.phonenumber})
                 .then(function (response) {
                     $scope.postivemessage = "Update your detials successfully";
                 }, function(error) {

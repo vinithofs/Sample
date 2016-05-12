@@ -1,4 +1,13 @@
+<div>
+    <select ng-model="showSelectValue"
+            ng-init="getUserDetails()"
+            ng-options="option as option for option in optionList"
+            ng-change="getUserDetails()">
+        </select>
+</div>
+
 <div class = "userdetails">
+
     <table border=1 style="border-collapse: collapse">
 
         <tr>
@@ -11,77 +20,14 @@
         </tr>
 
         <tr ng-repeat="inventry in inventry track by $index">
-            if(status == "Approved") {
-            <td ng-if="$odd" style="background-color:lightgray">
-                {{inventry.name}} </td>
-            <td ng-if="$even">
-                {{inventry.name}} </td>
-            <td ng-if="$odd" style="background-color:lightgray">
-                {{inventry.mailId}} </td>
-            <td ng-if="$even">
-                {{inventry.mailId}} </td>
-            <td ng-if="$odd" style="background-color:lightgray">
-                {{inventry.dateOfBirth}} </td>
-            <td ng-if="$even">
-                {{inventry.dateOfBirth}} </td>
-            <td ng-if="$odd" style="background-color:lightgray">
-                {{inventry.phonenumber}} </td>
-            <td ng-if="$even">
-                {{inventry.phonenumber}} </td>
-            <td ng-if="$odd" style="background-color:lightgray">
-                {{inventry.status}} </td>
-            <td ng-if="$even">
-                {{inventry.status}} </td>
-            <td><button ng-click = "updatestatus()">Disapprove</button></td>
+            <td>{{inventry.name}}</td>
+            <td>{{inventry.mailId}}</td>
+            <td>{{inventry.dateOfBirth}}</td>
+            <td>{{inventry.phonenumber}}</td>
+            <td>{{inventry.status}}</td>
+            <p ng-if = "status == 'WFA'">
+            <td><button ng-click = "updatestatus()">Approve</button></td>
+        </p>
         </tr>
-    }
-        else if(status == "Disapproved") {
-            <td ng-if="$odd" style="background-color:lightgray">
-                {{inventry.name}} </td>
-            <td ng-if="$even">
-                {{inventry.name}} </td>
-            <td ng-if="$odd" style="background-color:lightgray">
-                {{inventry.mailId}} </td>
-            <td ng-if="$even">
-                {{inventry.mailId}} </td>
-            <td ng-if="$odd" style="background-color:lightgray">
-                {{inventry.dateOfBirth}} </td>
-            <td ng-if="$even">
-                {{inventry.dateOfBirth}} </td>
-            <td ng-if="$odd" style="background-color:lightgray">
-                {{inventry.phonenumber}} </td>
-            <td ng-if="$even">
-                {{inventry.phonenumber}} </td>
-            <td ng-if="$odd" style="background-color:lightgray">
-                {{inventry.status}} </td>
-            <td ng-if="$even">
-                {{inventry.status}} </td>
-            <td><button  ng-click = "updatestatus()">Approve</button></td>
-        </tr>
-    }
-        else if(status == "WFA") {
-            <td ng-if="$odd" style="background-color:lightgray">
-                {{inventry.name}} </td>
-            <td ng-if="$even">
-                {{inventry.name}} </td>
-            <td ng-if="$odd" style="background-color:lightgray">
-                {{inventry.mailId}} </td>
-            <td ng-if="$even">
-                {{inventry.mailId}} </td>
-            <td ng-if="$odd" style="background-color:lightgray">
-                {{inventry.dateOfBirth}} </td>
-            <td ng-if="$even">
-                {{inventry.dateOfBirth}} </td>
-            <td ng-if="$odd" style="background-color:lightgray">
-                {{inventry.phonenumber}} </td>
-            <td ng-if="$even">
-                {{inventry.phonenumber}} </td>
-            <td ng-if="$odd" style="background-color:lightgray">
-                {{inventry.status}} </td>
-            <td ng-if="$even">
-                {{inventry.status}} </td>
-            <td><button>Approve</button>
-            <button>Disapprove</button></td>
-        </tr>
-   </table>
+    </table>
 </div>

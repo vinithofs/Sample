@@ -35,10 +35,7 @@ angular.module('Inventry', ['ui.router', 'Inventry', 'inventry.home', 'home.prof
         .state('home.userget', {
 	            url: '/userget',
 	            templateUrl: 'views/user.html',
-	 			controller: 'users',
-	 			onEnter : function () {
-	 			console.log('user page');
-			}
+	 			controller: 'users'
         });
 		$urlRouterProvider.otherwise('/login');
 });

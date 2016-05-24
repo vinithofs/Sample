@@ -5,7 +5,6 @@ angular.module('home.profile', [])
         $scope.userdetails = {};
 
         function getCookie(cname) {
-        console.log("hello");
             var name = cname + "=";
             var ca = document.cookie.split(';');
                 for(var i=0; i<ca.length; i++) {
@@ -49,6 +48,6 @@ angular.module('home.profile', [])
                     $scope.postivemessage = "Update your detials successfully";
                 }, function(error) {
                     $scope.errormessage = "Enter your valid details";
-                });
-        };
+        });
+    };
 });

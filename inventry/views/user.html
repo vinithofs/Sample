@@ -3,13 +3,12 @@
             ng-init="getUserDetails()"
             ng-options="option as option for option in optionList"
             ng-change="getUserDetails()">
-        </select>
+        </select><br><br>
 </div>
 
 <div class = "userdetails">
 
-    <table border=1 style="border-collapse: collapse">
-
+    <table>
         <tr>
             <th>NAME</th>
             <th>MAIL-ID</th>
@@ -19,15 +18,24 @@
             <th>ACTION</th>
         </tr>
 
-        <tr ng-repeat="inventry in inventry track by $index">
+        <tr ng-repeat="inventry in userdetails.inventry">
             <td>{{inventry.name}}</td>
             <td>{{inventry.mailId}}</td>
             <td>{{inventry.dateOfBirth}}</td>
             <td>{{inventry.phonenumber}}</td>
             <td>{{inventry.status}}</td>
-            <p ng-if = "status == 'WFA'">
-            <td><button ng-click = "updatestatus()">Approve</button></td>
-        </p>
+            <td><button ng-if="inventry.status=='Disapproved'"
+                        ng-click="ApprovedStatus(inventry,'Approved')">
+                        Approve</button>
+                <button ng-if="inventry.status=='Approved'"
+                        ng-click="DisapprovedStatus(inventry,'Disapproved')">
+                        Disapprove</button>
+                <button ng-if ="inventry.status=='WFA'"
+                        ng-click="ApprovedStatus(inventry,'Approved')">
+                        Approve</button>
+                <button ng-if ="inventry.status=='WFA'"
+                        ng-click="DisapprovedStatus(inventry,'Disapproved')">
+                        Disapprove</button></td>
         </tr>
     </table>
 </div>

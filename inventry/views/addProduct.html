@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<div class = "signupstyle">
+    <p>{{errormessage}}</p>
+    <p>{{postivemessage}}</p>
+    <h3>{{billname}}</h3>
+    <form name= "productForm">
+        <div>
+            <input type = "text"
+                placeholder="Enter your product name"
+                class = "formcontroll"
+                name = "product"
+                ng-model = "getproduct.productname" autofocus required>
+                <p ng-show = "productForm.product.$error.required &&
+                            productForm.product.$dirty">Please enter your product name</p><br><br>
+        </div>
+
+        <div>
+            <input type = "text"
+                placeholder="Enter your brand name"
+                class = "formcontroll"
+                name = "brand"
+                ng-model = "getproduct.brandname" required>
+                <p ng-show = "productForm.brand.$error.required &&
+                            productForm.brand.$dirty">Please enter your brand name</p><br><br>
+        </div>
+
+        <div>
+            <input type = "text"
+                placeholder="Enter your cloth qulaity"
+                class="formcontroll"
+                name="quality"
+                ng-model = "getproduct.quality" required>
+                <p ng-show = "productForm.quality.$error.required &&
+                            productForm.quality.$dirty">Please enter your brand name</p><br><br>
+        </div>
+
+    <div>
+        <input type = "number"
+            placeholder="Enter your product price"
+            class="formcontroll"
+            name= "numbers"
+            ng-minlength = "3"
+            ng-maxlength = "5"
+            ng-model="getproduct.price" required>
+            <p ng-show = "productForm.numbers.$error.required ||
+                    productForm.numbers.$error.number"></p>
+            <p ng-show = "((productForm.numbers.$error.minlength ||
+                    productForm.numbers.$error.maxlength) &&
+                    productForm.numbers.$dirty)">
+                    price should be 3 to 5 digits</p><br><br>
+    </div>
+
+    <div>
+        <input type="file" accept="image/*" image="image2"
+            resize-max-height="300"
+            resize-max-width="250"
+            resize-quality="0.7"
+            name= "image"
+            ng-src="data:image/jpeg;base64"
+            ng-model="getproduct.images" required>
+        </div>
+
+        <div>
+            <button class ="buttons" ng-click="addProductDetails()">Add</button>
+        </div>
+    </form>
+</div>

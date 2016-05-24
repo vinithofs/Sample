@@ -1,4 +1,5 @@
-angular.module('Inventry', ['ui.router', 'Inventry', 'inventry.home', 'home.profile', 'home.userget'])
+angular.module('Inventry', ['ui.router', 'Inventry', 'inventry.home',
+                'home.profile', 'home.userget', 'home.product','inventry.product'])
     .config(function($stateProvider, $urlRouterProvider) {
 
 		$stateProvider
@@ -27,15 +28,22 @@ angular.module('Inventry', ['ui.router', 'Inventry', 'inventry.home', 'home.prof
         .state('home.profile', {
 	            url: '/profile',
 	            templateUrl: 'views/profile.html',
-	 			controller: 'userdetails',
-	 			onEnter : function () {
-	 			console.log('profile page');
-			}
+	 			controller: 'userdetails'
         })
         .state('home.userget', {
 	            url: '/userget',
 	            templateUrl: 'views/user.html',
 	 			controller: 'users'
+        })
+        .state('home.product', {
+                url: '/products',
+                templateUrl: 'views/products.html',
+                controller: 'productviews'
+        })
+        .state('newproductdetails', {
+                url: '/addproducts',
+                templateUrl: 'views/addProduct.html',
+                controller: 'demoproduct'
         });
 		$urlRouterProvider.otherwise('/login');
 });

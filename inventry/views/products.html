@@ -1,0 +1,23 @@
+<div>
+    <select ng-model="showProductValue"
+            ng-init="getProductsDetails()"
+            ng-options="option as option for option in productname"
+            ng-change="getProductsDetails()">
+        </select><br><br>
+</div>
+
+<div>
+    <button class = "productbutton" ui-sref= "newproductdetails">Add product</button>
+</div>
+
+<div>
+    <ul ng-repeat="product in productdetails.products">
+        <ul><a href="#"><img ng-src="data:image/jpeg;base64,{{product.productImages}}"></a></ul>
+        <ul class = "productalign">{{product.productName}}</ul>
+        <ul class = "productalign">{{product.brand}}</ul>
+        <ul class= "productalign">{{product.quality}}</ul>
+        <ul class = "productalign">{{product.price}}</ul>
+        <ul><a><h3 class="buttons"
+            ng-click = "getProduct()">ORDER NOW!</h3></a></ul>
+    </ul>
+</div>

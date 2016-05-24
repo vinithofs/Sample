@@ -10,6 +10,11 @@
         <servlet-name>credential</servlet-name>
         <servlet-class>com.objectfrontier.servlet.CredentialServlet</servlet-class>
     </servlet>
+    
+     <servlet>
+        <servlet-name>product</servlet-name>
+        <servlet-class>com.objectfrontier.servlet.productAddServlet</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>details</servlet-name>
@@ -19,6 +24,11 @@
     <servlet-mapping>
         <servlet-name>credential</servlet-name>
         <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>product</servlet-name>
+        <url-pattern>/productDetails</url-pattern>
     </servlet-mapping>
 
 </web-app>

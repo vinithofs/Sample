@@ -5,47 +5,41 @@
     <p>{{errormessage}}</p>
     <h2>{{pagename}}</h2>
 
-    <form name = "nameForm">
+    <form name = "signUpForm">
     <div>
         <input type = "text"
             placeholder = "Enter your name"
             name = "name"
             class = "formcontroll"
-            ng-model = "name" autofocus required>
-            <p ng-show = "nameForm.name.$error.required &&
-                        nameForm.name.$dirty">Please enter your name</p><br><br>
+            ng-model = "userSignUp.name" autofocus required>
+            <p ng-show = "signUpForm.name.$error.required &&
+                        signUpForm.name.$dirty">Please enter your name</p><br><br>
             </div>
-        </form>
 
-    <form name = "usernameForm">
         <div>
             <input type = "text"
             placeholder = "Enter your user name"
             class = "formcontroll"
             name = "username"
-            ng-model = "username" required>
-            <p ng-show = "usernameForm.username.$error.required &&
-                        usernameForm.username.$dirty">
+            ng-model = "userSignUp.username" required>
+            <p ng-show = "signUpForm.username.$error.required &&
+                        signUpForm.username.$dirty">
                         please enter your username</p><br><br>
            </div>
-       </form>
 
-    <form name = "validemail">
         <div>
         <input type = "email"
                placeholder="Enter your EmailId"
                name = "email"
                class ="formcontroll"
-               ng-model="mailid" required/>
-               <p ng-show="validemail.email.$error.required
-               && validemail.email.$dirty">Please enter your email</p>
-               <p ng-show="!validemail.email.$error.required
-               && validemail.email.$error.email && validemail.email.$dirty">
+               ng-model="userSignUp.mailid" required/>
+               <p ng-show="signUpForm.email.$error.required
+               && signUpForm.email.$dirty">Please enter your email</p>
+               <p ng-show="!signUpForm.email.$error.required
+               && signUpForm.email.$error.email && signUpForm.email.$dirty">
                Invalid email</p><br><br>
            </div>
-       </form>
 
-    <form name = "passwordForm">
         <div>
         <input type = "password"
                placeholder = "Enter your password"
@@ -54,48 +48,42 @@
                ng-minlength = "8"
                ng-maxlength="20"
                ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/"
-               ng-model = "password" required/>
-               <p ng-show="passwordForm.password.$error.required
-               && passwordForm.password.$dirty">Please enter your password</p>
-               <p ng-show = "!passwordForm.password.$error.required &&
-                        (passwordForm.password.$error.minlength ||
-                         passwordForm.password.$error.maxlength)&&
-                         passwordForm.password.$dirty">
+               ng-model = "userSignUp.password" required/>
+               <p ng-show="signUpForm.password.$error.required
+               && signUpForm.password.$dirty">Please enter your password</p>
+               <p ng-show = "!signUpForm.password.$error.required &&
+                        (signUpForm.password.$error.minlength ||
+                         signUpForm.password.$error.maxlength)&&
+                         signUpForm.password.$dirty">
                          password must be between 8 and 20 characters.</p>
-                <p ng-show = "!passwordForm.password.$error.required &&
-                        !passwordForm.password.$error.minlength &&
-                        !passwordForm.password.$error.maxlength &&
-                        passwordForm.password.$error.pattern &&
-                        passwordForm.password.$dirty">
+                <p ng-show = "!signUpForm.password.$error.required &&
+                        !signUpForm.password.$error.minlength &&
+                        !signUpForm.password.$error.maxlength &&
+                        signUpForm.password.$error.pattern &&
+                        signUpForm.password.$dirty">
                         Must contain one lower &amp; uppercase letter,
                         and one non-alpha character </p><br><br>
            </div>
-       </form>
 
-        <form name = "dateform">
         <div>
             <input type = "date"
                class = "formcontroll"
                name = "date"
-               ng-model = "date" required/>
-               <p ng-show="dateform.date.$error.required">
+               ng-model = "userSignUp.date" required/>
+               <p ng-show="signUpForm.date.$error.required">
                    </p><br><br>
         </div>
-    </form>
 
-    <form name = "addresForm">
         <div>
         <textarea type ="address" name="add" rows="8" cols="30"
                   placeholder = "Enter your address"
                   name = "address"
                   class = "address"
-                  ng-model = "address" required></textarea>
-                  <p ng-show="dateform.address.$error.required">
-                      Enetr your address</p><br><br><br><br>
+                  ng-model = "userSignUp.address" required></textarea>
+                  <p ng-show="signUpForm.address.$error.required">
+                      Enter your address</p><br><br><br><br>
             </div>
-        </form>
 
-    <form name = "numberForm">
         <div>
         <input type="number"
                placeholder = "Enter your phonenumber"
@@ -103,15 +91,15 @@
                name = "numbers"
                ng-minlength = "10"
                ng-maxlength = "10"
-               ng-model="phno" required/>
-               <p ng-show = "numberForm.numbers.$error.required ||
-                           numberForm.numbers.$error.number"></p>
-                <p ng-show = "((numberForm.numbers.$error.minlength ||
-                            numberForm.numbers.$error.maxlength) &&
-                            numberForm.numbers.$dirty)">
+               ng-model="userSignUp.phno" required>
+               <p ng-show = "signUpForm.numbers.$error.required ||
+                           signUpForm.numbers.$error.number"></p>
+                <p ng-show = "((signUpForm.numbers.$error.minlength ||
+                            signUpForm.numbers.$error.maxlength) &&
+                            signUpForm.numbers.$dirty)">
                             Phone number should be 10 digits</p><br><br>
            </div>
-       </form>
-    <button class = "buttons" ng-click="signinpage()">Submit</button>
+    <button class = "buttons" ng-click="signinpage()" ng-disabled="signUpForm.$invalid">Submit</button>
     <button class = "buttons" ui-sref="login" >Cancel</button>
+    </form>
 </div>

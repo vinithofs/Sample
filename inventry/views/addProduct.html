@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<div class = "signupstyle">
+<div class = "style">
     <p>{{errormessage}}</p>
     <p>{{postivemessage}}</p>
     <h3>{{billname}}</h3>
@@ -53,10 +53,7 @@
 
     <div>
         <input type="file" accept="image/*" image="image2"
-            resize-max-height="300"
-            resize-max-width="250"
-            resize-quality="0.7"
-            name= "image"
+            img ng-src="data:image/jpeg;base64"
             ng-model="getproduct.images" required>
         </div>
 

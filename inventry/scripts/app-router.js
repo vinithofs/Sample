@@ -1,5 +1,5 @@
 angular.module('Inventry', ['ui.router', 'Inventry', 'inventry.home',
-                'home.profile', 'home.userget', 'home.product','inventry.product'])
+'home.profile', 'home.userget', 'home.product', 'home.order','inventry.product'])
     .config(function($stateProvider, $urlRouterProvider) {
 
 		$stateProvider
@@ -40,10 +40,15 @@ angular.module('Inventry', ['ui.router', 'Inventry', 'inventry.home',
                 templateUrl: 'views/products.html',
                 controller: 'productviews'
         })
+        .state('home.order', {
+                url: '/orderdetails/:productid',
+                templateUrl: 'views/order.html',
+                controller: 'orderproduct'
+            })
         .state('newproductdetails', {
                 url: '/addproducts',
                 templateUrl: 'views/addProduct.html',
                 controller: 'demoproduct'
         });
-		$urlRouterProvider.otherwise('/login');
+	       $urlRouterProvider.otherwise('/login');
 });

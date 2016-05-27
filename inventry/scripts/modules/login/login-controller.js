@@ -3,7 +3,7 @@ angular.module('Inventry')
 
         $scope.greeting = "Log in ";
         $scope.login = function login() {
-            var url = "http://localhost:8080/inventry/login";
+            var url = "http://localhost:8080/inventry/user";
             $http.post (url, {userName:$scope.username,
                              password:$scope.password}).
             then(function (response) {

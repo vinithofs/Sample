@@ -6,7 +6,7 @@ angular.module('home.userget', [])
         $scope.showSelectValue = $scope.optionList[0];
         console.log("tabel page");
         $scope.getUserDetails = function getUserDetails() {
-            var url = "http://localhost:8080/inventry/login?status=" + $scope.showSelectValue;
+            var url = "http://localhost:8080/inventry/user?status=" + $scope.showSelectValue;
             $http.get(url) .then(function (response) {
                 $scope.userdetails.inventry = response.data;
                 $state.go('home.userget');
@@ -15,7 +15,7 @@ angular.module('home.userget', [])
 
         $scope.ApprovedStatus = function ApprovedStatus(inventry,status) {
         console.log("satus page");
-        var url = "http://localhost:8080/inventry/login";
+        var url = "http://localhost:8080/inventry/user";
         alert("Are you Sure want to Approve");
         inventry.status = status;
         $http.put(url, inventry)
@@ -26,7 +26,7 @@ angular.module('home.userget', [])
 
         $scope.DisapprovedStatus = function DisapprovedStatus(inventry,status) {
         console.log("satus page");
-        var url = "http://localhost:8080/inventry/login";
+        var url = "http://localhost:8080/inventry/user";
         alert("Are you Sure want to Approve");
         inventry.status = status;
         $http.put(url, inventry)

@@ -22,7 +22,7 @@ angular.module('home.profile', [])
         $scope.userprofilepage = function userprofilepage() {
         console.log("userprofile");
             var id = getCookie("id");
-            var url = "http://localhost:8080/inventry/login?id="+id;
+            var url = "http://localhost:8080/inventry/user?id="+id;
             $http.get(url)
                 .then(function (response) {
                     $scope.userdetails.name = response.data.name;
@@ -40,7 +40,7 @@ angular.module('home.profile', [])
         $scope.updatedetials = function updatedetials() {
         console.log("update page");
             var getId = getCookie("id");
-            var url = "http://localhost:8080/inventry/login";
+            var url = "http://localhost:8080/inventry/user";
             $http.put(url , {id: getId,
                     password : $scope.userdetails.password,
                     phonenumber : $scope.userdetails.phonenumber})

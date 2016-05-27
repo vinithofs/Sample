@@ -18,12 +18,17 @@
     margin-left: 50px;
 }
 
-.signupstyle {
+.style {
     border: 1px solid gray;
     background-color: cyan;
     width: 300px;
     text-align: center;
     margin-left: 500px;
+}
+.orderpagestyle{
+    width: 300px;
+    text-align: center;
+    margin-left: 50px;
 }
 
 .userdetails {
@@ -65,6 +70,7 @@
 }
 .buttons:hover {
     cursor: pointer;
+    color: green;
 }
 
 .logoutbutton {
@@ -93,4 +99,7 @@ table, th, td {
 }
 .productbutton {
     margin-left: 750px;
+}
+.orderimagestyle{
+    margin-left: 200px;
 }

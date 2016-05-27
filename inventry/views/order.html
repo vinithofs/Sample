@@ -1,0 +1,36 @@
+<div class = "orderpagestyle" ng-init="orderDetails()">
+    <h3>{{orderdetailstitle}}</h3>
+
+    <div>
+        <img ng-src="data:image/jpeg;base64,{{order.images}}">
+    </div>
+
+    <div>
+        <input type = "text"
+            class = "formcontroll"
+            ng-model = "order.productname" disabled><br><br>
+    </div>
+
+    <div>
+        <input type = "text"
+            class = "formcontroll"
+            ng-model = "order.brandname" disabled><br><br>
+    </div>
+
+    <div>
+        <input type = "text"
+            class="formcontroll"
+            ng-model = "order.quality" disabled><br><br>
+    </div>
+
+    <div>
+        <input type = "number"
+            class="formcontroll"
+            ng-model="order.price" disabled><br><br>
+    </div>
+
+    <div>
+        <button class ="buttons">BUY</button>
+    </div>
+</form>
+</div>

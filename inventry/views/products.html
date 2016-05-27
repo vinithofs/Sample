@@ -1,23 +1,24 @@
 <div>
-    <select ng-model="showProductValue"
+    <select id ="mySelect" ng-model="showProductValue"
             ng-init="getProductsDetails()"
             ng-options="option as option for option in productname"
             ng-change="getProductsDetails()">
         </select><br><br>
+        <button type="button" onclick="getProductsDetails()">Insert option</button>
 </div>
 
-<div>
+<div ng-show="addbutton">
     <button class = "productbutton" ui-sref= "newproductdetails">Add product</button>
 </div>
 
-<div>
+<div ng-show= "productviews">
     <ul ng-repeat="product in productdetails.products">
-        <ul><a href="#"><img ng-src="data:image/jpeg;base64,{{product.productImages}}"></a></ul>
+        <li><ul href="#" class="button"><img ng-src="data:image/jpeg;base64,{{product.productImages}}"
+                ng-click="getProductId(product.productid)"></ul></li>
         <ul class = "productalign">{{product.productName}}</ul>
         <ul class = "productalign">{{product.brand}}</ul>
         <ul class= "productalign">{{product.quality}}</ul>
         <ul class = "productalign">{{product.price}}</ul>
-        <ul><a><h3 class="buttons"
-            ng-click = "getProduct()">ORDER NOW!</h3></a></ul>
+        <ul><a><h3 class="buttons" ng-click="getProductId(product.productid)">ORDER NOW!</h3></a></ul>
     </ul>
 </div>

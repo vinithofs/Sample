@@ -44,7 +44,7 @@ angular.module('Inventry', ['ui.router', 'Inventry', 'inventry.home',
                 url: '/orderdetails/:productid',
                 templateUrl: 'views/order.html',
                 controller: 'orderproduct'
-            })
+        })
         .state('newproductdetails', {
                 url: '/addproducts',
                 templateUrl: 'views/addProduct.html',

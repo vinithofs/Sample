@@ -103,3 +103,8 @@ table, th, td {
 .orderimagestyle{
     margin-left: 200px;
 }
+.quantitystyle{
+    width: 50px;
+    height: 20px;
+    border-radius: 8px;
+}

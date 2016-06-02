@@ -27,7 +27,7 @@ angular.module('home.userget', [])
         $scope.DisapprovedStatus = function DisapprovedStatus(inventry,status) {
         console.log("satus page");
         var url = "http://localhost:8080/inventry/user";
-        alert("Are you Sure want to Approve");
+        alert("Are you Sure want to Disapprove");
         inventry.status = status;
         $http.put(url, inventry)
         .then(function(response) {

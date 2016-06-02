@@ -1,36 +1,71 @@
 <div class = "orderpagestyle" ng-init="orderDetails()">
-    <h3>{{orderdetailstitle}}</h3>
+    <p>{{updatedetial}}</p>
+    <p>{{errormessage}}</p>
+    <h3 ng-show ="productpage">{{orderdetailstitle}}</h3>
 
     <div>
         <img ng-src="data:image/jpeg;base64,{{order.images}}">
     </div>
 
-    <div>
-        <input type = "text"
-            class = "formcontroll"
+    <div ng-show ="productpage">
+        <input class = "formcontroll"
             ng-model = "order.productname" disabled><br><br>
     </div>
 
-    <div>
-        <input type = "text"
-            class = "formcontroll"
+    <div ng-show ="productpage">
+        <input class = "formcontroll"
             ng-model = "order.brandname" disabled><br><br>
     </div>
 
-    <div>
-        <input type = "text"
-            class="formcontroll"
+    <div ng-show ="productpage">
+        <input class="formcontroll"
             ng-model = "order.quality" disabled><br><br>
     </div>
 
-    <div>
-        <input type = "number"
-            class="formcontroll"
+    <div ng-show ="productpage">
+        <input class="formcontroll"
             ng-model="order.price" disabled><br><br>
     </div>
 
-    <div>
-        <button class ="buttons">BUY</button>
+    <div ng-show = "productpage">
+        <label>Avaliable products:</label>
+            <input class = "formcontroll"
+            ng-model="order.quantity" disabled><br><br>
     </div>
-</form>
+
+    <div ng-show = "productpage">
+        <label>Total Product:</label>
+            <input class = "formcontroll"
+            ng-model ="order.totalquantity" disabled><br><br>
+    </div>
+
+    <h3 ng-show= "cartPage">{{cartpagename}}<h3>
+        <form name="cartPageForm">
+        <li ng-show ="cartPage">
+            <input  class = "formcontroll"
+                    ng-model="order.name" disabled><br><br>
+        </li>
+
+        <li  ng-show ="cartPage">
+            <label>Quantity</label>
+                <input type="text" class="quantitystyle" name="prouductquantity"
+                value=1 min="1" max="5" ng-model="order.prouductquantity"><br><br>
+        </li>
+
+        <li  ng-show ="cartPage">
+            <input class = "formcontroll"
+                ng-model="order.productprice" disabled><br><br>
+        </li>
+
+        <div>
+            <button  ng-show = "productpage" class ="buttons"
+                    ng-click="cartProductDetails()">Add to cart</button>
+        </div>
+
+        <div>
+            <button ng-show = "cartPage" class = "buttons"
+                    ng-click = "updateQuantity()"
+                    ng-disabled ="cartPageForm.$invalid">BUY NOW!</button>
+        </div>
+    </form>
 </div>

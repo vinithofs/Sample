@@ -1,10 +1,12 @@
 <div>
-    <select id ="mySelect" ng-model="showProductValue"
+    <select ng-model="showProductValue"
             ng-init="getProductsDetails()"
             ng-options="option as option for option in productname"
             ng-change="getProductsDetails()">
         </select><br><br>
-        <button type="button" onclick="getProductsDetails()">Insert option</button>
+
+        <input ng-model="addme">
+        <button class="buttons"  ng-click="getProductsDetails()">Insert Product</button>
 </div>
 
 <div ng-show="addbutton">
